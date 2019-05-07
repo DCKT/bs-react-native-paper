@@ -28,6 +28,8 @@ type props = {
   onPress: BsReactNative.RNEvent.NativeEvent.t => unit,
   [@bs.optional]
   onClose: BsReactNative.RNEvent.NativeEvent.t => unit,
+  [@bs.optional]
+  testID: string,
 };
 
 let make =
@@ -42,6 +44,7 @@ let make =
       ~theme=?,
       ~onPress=?,
       ~onClose=?,
+      ~testID=?,
       children,
     ) =>
   ReasonReact.wrapJsForReason(
@@ -60,6 +63,7 @@ let make =
           ~theme?,
           ~onPress?,
           ~onClose?,
+          ~testID?,
           (),
         )
       | Some(Icon.Element(renderFunc)) =>
@@ -74,6 +78,7 @@ let make =
           ~theme?,
           ~onPress?,
           ~onClose?,
+          ~testID?,
           (),
         )
       | None =>
@@ -87,6 +92,7 @@ let make =
           ~theme?,
           ~onPress?,
           ~onClose?,
+          ~testID?,
           (),
         )
       },
